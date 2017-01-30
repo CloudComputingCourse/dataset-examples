@@ -13,7 +13,7 @@ import simplejson as json
 def read_and_write_file(json_file_path, csv_file_path, column_names):
     """Read in the json dataset file and write it out to a csv file, given the column names."""
     with open(csv_file_path, 'wb+') as fout:
-        csv_file = csv.writer(fout)
+        csv_file = csv.writer(fout, delimiter="\t")
         csv_file.writerow(list(column_names))
         with open(json_file_path) as fin:
             for line in fin:

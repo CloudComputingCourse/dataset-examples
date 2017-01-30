@@ -122,8 +122,7 @@ class WeightedPositiveWords(MRJob):
         yield int(avg * 100), (category, total, word)
 
     def steps(self):
-        return [ self.mr(self.review_category_mapper, self.category_join_reducer),
-                self.mr(self.review_mapper, self.positivity_reducer)]
+        return [ self.mr(mapper=self.review_category_mapper, reducer=self.category_join_reducer), self.mr(mapper=self.review_mapper, reducer=self.positivity_reducer)]
 
 
 if __name__ == "__main__":
