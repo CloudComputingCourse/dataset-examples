@@ -95,7 +95,7 @@ create table `tips` (
 	`type` varchar(3) default "tip" not null,
 	`tip_id` int NOT NULL AUTO_INCREMENT,
 	primary key (tip_id),
-	foreign key (user_id) references users(user_id),
+	-- foreign key (user_id) references users(user_id),
 	foreign key (business_id) references businesses(business_id)
 );
 
